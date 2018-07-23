@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*"%>
  <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -15,11 +15,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>Insert title here</title>
 </head>
 <body>
+<%  HttpSession se = request.getSession();
+     se.getAttribute("article");
+     se.getAttribute("admin");
+     se.getAttribute("stid");
+     se.getAttribute("pageNow");
+  
+   
+      %>
 	<div class="rightbar">
 
             	<div class="bread">
             		<span style="float:left;width:80px;height:30px;background-color:lightblue;text-align:center;margin-top:8px;">
-            			<a style="cursor:pointer;color:red;display:block;" href="<%=basePath%>/beautiful/showlist.do?stid=${stid}&pageNow=${pageNow}">返回列表</a>
+            			<a style="cursor:pointer;color:red;display:block;" href="<%=basePath%>User/beautiful?action=showList&stid=${stid}&pageNow=${pageNow}">返回列表</a>
             		</span>
             	</div>
 
@@ -29,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                     	<span>${article.articlename }</span>
 
-                        发布人:${admin.adminname }　　发布时间：${article.releasetime }
+                        发布人:${admin.name }　　发布时间：${article.releasetime }
 
                   </p>
 
