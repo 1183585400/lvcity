@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -17,10 +17,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 <div class="rightbar">
           	<div class="bread">
-          		<a href="index.html" style="float:left">首页</a><span style="float:left">>${noticetype }</span>
-          		<form method="post" action="<%=basePath %>/noticetype/search.do?ntid=${ntid }&pageNow=1">
+          		<a target = "_top" href="<%=basePath%>User/Index" style="float:left">首页</a><span style="float:left">>${noticetype }</span>
+          		<form method="post" action="<%=basePath %>User/noticetype?action=search&ntid=${ntid }&pageNow=1">
 	          		<div style="width:200px;height:25px;float:right;">
-	          			<input type="text" name="gjc" style="float:left;width:100px;height:25px;margin-top:5px;"/>
+	          			<input type="text" name="mhcx" style="float:left;width:100px;height:25px;margin-top:5px;"/>
 	          			<input type="submit" style="width:50px;height:30px;float:left;margin-top:5px;" value="搜索"/>
 	          		</div>
           		</form>
@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  <c:if test="${!empty noticelist }">
 				<c:forEach items="${noticelist}" var="notice" varStatus="loop">
 					<c:if test="${!empty articlelist }">
-       				 <li><span>${articlelist[loop.count-1].releasetime}</span><a href="<%=basePath %>/noticetype/watch.do?ntid=${notice.ntid}&aid=${notice.aid}&pageNow=${pageNow }">${notice.nname }</a></li>
+       				 <li><span>${articlelist[loop.count-1].releasetime}</span><a href="<%=basePath %>User/noticetype?action=watch&ntid=${notice.ntid}&aid=${notice.aid}&pageNow=${pageNow }">${notice.nname }</a></li>
        				</c:if>
        			</c:forEach>
 				</c:if>
@@ -45,14 +45,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
            		<div class="line">
                    <div class="fy_left">
-                       共${rowCount }条&nbsp;|&nbsp;每页${pageSize }条&nbsp;|&nbsp;共${pageCount }页
+                       	共${rowCount }条&nbsp;|&nbsp;每页${pageSize }条&nbsp;|&nbsp;共${pageCount }页
                    </div>
                    <div class="fy_right">
-                       <div class="fy"><a href="<%=basePath%>/noticetype/search2.do?ntid=${ntid}&gjc=${gjc }&pageNow=${pageCount }">尾页</a></div>
-                       <div class="fy"><a href="<%=basePath%>/noticetype/search2.do?ntid=${ntid}&gjc=${gjc }&pageNow=${pageNow+1 }">下一页</a></div>
+                       <div class="fy"><a href="<%=basePath%>User/noticetype?action=search2&ntid=${ntid}&mhcx=${mhcx }&pageNow=${pageCount }">尾页</a></div>
+                       <div class="fy"><a href="<%=basePath%>User/noticetype?action=search2&ntid=${ntid}&mhcx=${mhcx }&pageNow=${pageNow+1 }">下一页</a></div>
                        <div class="fy"><a>${pageNow }</a></div>
-                       <div class="fy"><a href="<%=basePath%>/noticetype/search2.do?ntid=${ntid}&gjc=${gjc }&pageNow=${pageNow-1 }">上一页</a></div>
-                       <div class="fy"><a href="<%=basePath%>/noticetype/search2.do?ntid=${ntid}&gjc=${gjc }&pageNow=1">首页</a></div>
+                       <div class="fy"><a href="<%=basePath%>User/noticetype?action=search2&ntid=${ntid}&mhcx=${mhcx }&pageNow=${pageNow-1 }">上一页</a></div>
+                       <div class="fy"><a href="<%=basePath%>User/noticetype?action=search2&ntid=${ntid}&mhcx=${mhcx }&pageNow=1">首页</a></div>
                    </div>
                </div>
 

@@ -33,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
+
 <!--header-->
 
 <div class="header"> 
@@ -60,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		<ul>
 
 
-            	<li><a href="<%=basePath%>index/show.do">网站首页</a></li>       
+            	<li><a href="<%=basePath%>User/Index">网站首页</a></li>       
 				<!-- 在页面上使用网站地址调用控制器的方法 -->
                 <li><a href="<%=basePath%>historic/show.do">历史</a></li>     
 
@@ -70,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                 <li><a href="<%=basePath%>delicacy/show.do">美食</a></li>      
 
-                <li><a href="<%=basePath%>noticetype/show.do">动态</a></li>      
+                <li><a href="<%=basePath%>User/noticetype?action=show">动态</a></li>      
 
                 <li><a href="<%=basePath%>leave/huang.do">留言</a></li>   
 				
@@ -105,19 +106,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             	<div class="leftnav">
 
-                	<h1>必吃美食</h1>
+                	<h1>新闻分类</h1>
 
                 	<ul class="ul_left">
-                	
-			<c:if test="${!empty noticetypelist}">
-				<c:forEach items="${noticetypelist}" var="noticetype">
+          		
+          		
+			<!-- huanrunzhi改 -->
+ 			<c:if test="${!empty noticetypeList}">
+			<c:forEach items="${noticetypeList}" var="noticetype">
+			<li><h3><a target="notice" href="<%=basePath%>User/noticetype?action=showList&ntid=${noticetype.ntid}&pageNow=1">${noticetype.nt}</a></h3></li>
 
-        	<li><h3><a target="notice" href="<%=basePath%>/noticetype/showlist.do?ntid=${noticetype.ntid}&pageNow=1">${noticetype.nt}</a></h3></li>
-
-        </c:forEach>
+        	</c:forEach>
 			</c:if>
- 
-		      
+		 
+
          	</ul>
 
                  
@@ -142,8 +144,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
 
             </div>
-			
-			<iframe id="notice" name="notice" src="<%=basePath%>/noticetype/showlist.do?ntid=${firstnoticetypeid}&pageNow=1"  style="float:right;width:712px;height:665px;border:1px solid #cccccc;background-color:white;"></iframe>
+			<iframe id="notice" name="notice" src="<%=basePath%>User/noticetype?action=showList&ntid=${firstnoticetypeid}&pageNow=1"  style="float:right;width:712px;height:665px;border:1px solid #cccccc;background-color:white;"></iframe>
 
 
 		<!--content end--> 
@@ -154,7 +155,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="footer"> 
 
-<p><a href="<%=basePath%>index/show.do">首页</a> | <a href="<%=basePath%>historic/show.do">历史</a> | <a href="<%=basePath%>beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>delicacy/show.do">美食</a> | <a href="<%=basePath%>noticetype/show.do">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
+<p><a href="<%=basePath%>User/Index">首页</a> | <a href="<%=basePath%>historic/show.do">历史</a> | <a href="<%=basePath%>beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>delicacy/show.do">美食</a> | <a href="<%=basePath%>User/noticetype?action=show">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
 
 <p>Copyright &copy; 2015－2016 All Rights Reserved 版权所有 XXXXXXXXXXXXXXXXXX</p>
   <p>地址：XXXXXXXXXXXXXXXXXX  来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a> </p>

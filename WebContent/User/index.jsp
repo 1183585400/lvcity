@@ -124,7 +124,7 @@ if (document.all) {
 
                 <li><a href="<%=basePath%>User/Food?action=show">美食</a></li>      
 
-                <li><a href="<%=basePath%>noticetype/show.do">动态</a></li>      
+                <li><a href="<%=basePath%>User/noticetype?action=show">动态</a></li>      
 
                 <li><a href="<%=basePath%>leave/huang.do">留言</a></li>   
 				
@@ -268,7 +268,7 @@ if (document.all) {
 
 <div class="footer"> 
 
-	<p><a href="<%=basePath%>User/Index">首页</a> | <a href="<%=basePath%>historic/show.do">历史</a> | <a href="<%=basePath%>/beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>/User/Food">美食</a> | <a href="<%=basePath%>noticetype/show.do">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
+	<p><a href="<%=basePath%>User/Index">首页</a> | <a href="<%=basePath%>historic/show.do">历史</a> | <a href="<%=basePath%>/beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>/User/Food">美食</a> | <a href="<%=basePath%>User/noticetype?action=show">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
 
 <p>Copyright &copy; 2015－2016 All Rights Reserved 版权所有 XXXXXXXXXXXXXXXXXX</p>
   <p>地址：XXXXXXXXXXXXXXXXXX  来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a> </p>

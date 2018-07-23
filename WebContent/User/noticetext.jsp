@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             	<div class="bread">
             		<span style="float:left;width:80px;height:30px;background-color:lightblue;text-align:center;margin-top:8px;">
-            			<a style="cursor:pointer;color:red;display:block;" href="<%=basePath%>/noticetype/showlist.do?ntid=${ntid}&pageNow=${pageNow}">返回列表</a>
+            			<a style="cursor:pointer;color:red;display:block;" href="<%=basePath%>User/noticetype?action=showList&ntid=${ntid}&pageNow=${pageNow}">返回列表</a>
             		</span>
             	</div>
 
