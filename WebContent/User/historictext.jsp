@@ -33,12 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="rightbar">
 
-            	<div class="bread">
-            		<span style="float:left;width:80px;height:30px;background-color:lightblue;text-align:center;margin-top:8px;">
-            			<a style="cursor:pointer;color:red;display:block;" href="<%=basePath%>historic/showlist.do?ftid=${ftid}&pageNow=${pageNow}">返回列表</a>
-            		</span>
-            	</div>
-
+          		<div class="bread"><a target = _parent href="User/index.jsp">首页</a>>${articlename}</div>         				
+          	
             	<div class="con_news">
 
                 	<p class="p_tit2">

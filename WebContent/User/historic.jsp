@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     	<p>你好，欢迎光临绿城之都南宁！</p>
 
-        <div class="contact"><a href="index.html">设为首页</a> <a href="index.html">加入收藏</a></div>
+        <div class="contact"><a href="User/Index">设为首页</a> <a href="index.html">加入收藏</a></div>
 
 	</div>
 
@@ -57,9 +57,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		<ul>
 
 
-            	<li><a href="<%=basePath%>index/show.do">网站首页</a></li>       
+            	<li><a href="<%=basePath%>User/Index">网站首页</a></li>       
 				<!-- 在页面上使用网站地址调用控制器的方法 -->
-                <li><a href="<%=basePath%>historic/show.do">历史</a></li>     
+                <li><a href="<%=basePath%>User/Historic?action=show">历史</a></li>     
 
                 <li><a href="<%=basePath%>beautiful/yu.do">风景</a></li>        
 
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	<ul class="ul_left">
 						<c:if test="${!empty articleList }">
 							<c:forEach items="${articleList }" var="article">
-								<li><h3><a target="historic" href="<%=basePath %>historic/watch.do?aid=${article.aid}&pageNow=1">${article.articlename }</a></h3></li>
+								<li><h3><a target="historic" href="<%=basePath %>/User/Historic?action=showList&aid=${article.aid}&pageNow=1">${article.articlename }</a></h3></li>
 							</c:forEach>
 						</c:if>
          			</ul>
@@ -131,8 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
 
             </div>
-			<iframe id="historic" name="historic" src="<%=basePath%>historic/showlist.do?pageNow=1"  style="float:right;width:712px;height:665px;border:1px solid #cccccc;background-color:white;"></iframe>
-        
+			<iframe id="historic" name="historic" src="<%=basePath %>/User/Historic?action=showList&aid=18&pageNow=1"  style="float:right;width:712px;height:665px;border:1px solid #cccccc;background-color:white;"></iframe>        
         </div>
 
 		<!--content结束--> 
@@ -143,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="footer"> 
 
-	<p><a href="<%=basePath%>index/show.do">首页</a> | <a href="<%=basePath%>historic/show.do">历史</a> | <a href="<%=basePath%>beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>delicacy/show.do">美食</a> | <a href="<%=basePath%>noticetype/show.do">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
+	<p><a href="<%=basePath%>User/Index">首页</a> | <a href="<%=basePath%>User/Historic?action=show">历史</a> | <a href="<%=basePath%>beautiful/yu.do">风景</a> | <a href="<%=basePath%>tourism/showtourism.do">旅游</a> | <a href="<%=basePath%>delicacy/show.do">美食</a> | <a href="<%=basePath%>noticetype/show.do">动态</a> | <a href="<%=basePath%>leave/huang.do">留言</a>| <a href="<%=basePath%>connection/show.do">联系我们</a></p>
 
 <p>Copyright &copy; 2015－2016 All Rights Reserved 版权所有</p>
   <p>地址：XXXX </p>

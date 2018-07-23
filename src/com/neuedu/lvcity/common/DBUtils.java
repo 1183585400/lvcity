@@ -26,7 +26,7 @@ public class DBUtils {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/lvcitydb";
 			String user = "root";
-			String password = "123456";
+			String password = "123";
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -2,7 +2,7 @@ package com.neuedu.lvcity.model;
 
 import java.util.Date;
 /**
- * ÎÄÕÂÀà
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Administrator
  *
  */
@@ -11,10 +11,26 @@ public class ArticleVO {
 	private int aid;
 	private int atid;
 	private int publisher;
-	private Date releasetime;
+	private String releasetime;
 	private String content;
 	private  String image;
 	private String articlename;
+	
+	public ArticleVO() {
+		super();
+	}
+	public ArticleVO(int aid, int atid, int publisher, String releasetime, String content, String image,
+			String articlename) {
+		super();
+		this.aid = aid;
+		this.atid = atid;
+		this.publisher = publisher;
+		this.releasetime = releasetime;
+		this.content = content;
+		this.image = image;
+		this.articlename = articlename;
+	}
+	
 	public int getAid() {
 		return aid;
 	}
@@ -33,10 +49,10 @@ public class ArticleVO {
 	public void setPublisher(int publisher) {
 		this.publisher = publisher;
 	}
-	public Date getReleasetime() {
+	public String getReleasetime() {
 		return releasetime;
 	}
-	public void setReleasetime(Date releasetime) {
+	public void setReleasetime(String releasetime) {
 		this.releasetime = releasetime;
 	}
 	public String getContent() {
